@@ -52,16 +52,14 @@ export async function extraerDatosMultiplesCampañas(archivo, campañasSeleccion
     // Esta función recorta y pega los pedazos de fila que nos interesan
     const seleccionarColumnas = (filaCompleta) => {
         return [
-            ...filaCompleta.slice(0, 9),    // 1 a 9 (A - I)
-            ...filaCompleta.slice(10, 13),  // 11 a 13 (K - M) 
-            ...filaCompleta.slice(15, 42),  // P (15) a AQ (43)
-            ...filaCompleta.slice(15, 42),  // P (15) a AQ (43)
-            ...filaCompleta.slice(47, 49),  // AV (47) a AW (48)
-            ...filaCompleta.slice(50, 52),  // AY (50) a AZ (51)
-            ...filaCompleta.slice(52, 56),  
-            ...filaCompleta.slice(57, 61),  
-            ...filaCompleta.slice(62, 64),  
-            ...filaCompleta.slice(65, 79)   
+            ...filaCompleta.slice(0, 9),    // Info general de productos con llamados
+            ...filaCompleta.slice(10, 13),  // Vigencia y cat
+            ...filaCompleta.slice(15, 42),  // Codigos, ahorros, llamados
+            ...filaCompleta.slice(47, 52),  // Oferta web
+            ...filaCompleta.slice(52),      // Pantallas
+            ...filaCompleta.slice(53, 58),  // App HC
+            ...filaCompleta.slice(58, 63),  // APP COTR
+            ...filaCompleta.slice(64, 78)   //Llamados CMR
         ];
     };
 
