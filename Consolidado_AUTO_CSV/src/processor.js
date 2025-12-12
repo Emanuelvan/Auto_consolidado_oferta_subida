@@ -56,15 +56,16 @@ export async function extraerDatosMultiplesCampañas(archivo, campañasSeleccion
             ...filaCompleta.slice(10, 13),  // Vigencia y cat
             ...filaCompleta.slice(15, 42),  // Codigos, ahorros, llamados
             ...filaCompleta.slice(47, 52),  // Oferta web
-            ...filaCompleta.slice(52),      // Pantallas
-            ...filaCompleta.slice(53, 58),  // App HC
-            ...filaCompleta.slice(58, 63),  // APP COTR
-            ...filaCompleta.slice(64, 78)   //Llamados CMR
+            ...filaCompleta.slice(52,53),   // Pantallas
+            ...filaCompleta.slice(53, 55),  // App HC
+            ...filaCompleta.slice(56, 58),  // App HC 2
+            ...filaCompleta.slice(58, 60),  // APP COTR
+            ...filaCompleta.slice(61, 63),  // APP COTR 2
         ];
     };
 
     // 5. Construir el Dataset Final
-    
+     
     // Primero, procesamos el encabezado para que tenga las mismas columnas que los datos
     const filaEncabezadoOriginal = rawData[headerRowIndex];
     const nuevoEncabezado = seleccionarColumnas(filaEncabezadoOriginal);
